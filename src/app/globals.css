@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+:root {
+  --bg-raw: #f4f4f0;
+  --text-raw: #0a0a0a;
+}
+
+/* Class pemicu Invert Mode (berubah jadi Hitam/Gelap) */
+.invert-mode {
+  --bg-raw: #0a0a0a;
+  --text-raw: #f4f4f0;
+}
+
+body {
+  background-color: var(--bg-raw);
+  color: var(--text-raw);
+  font-family: monospace, sans-serif;
+  cursor: crosshair;
+}
+
+::selection {
+  background: var(--text-raw);
+  color: var(--bg-raw);
+}
+
+/* Setup Animasi Marquee */
+.animate-marquee {
+  display: inline-block;
+  white-space: nowrap;
+  animation: marquee 15s linear infinite;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
