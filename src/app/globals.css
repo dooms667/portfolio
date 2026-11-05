@@ -19,8 +19,13 @@ body {
 }
 
 ::selection {
-  background: var(--text-raw);
-  color: var(--bg-raw);
+  background-color: #ccff00; /* Warna hijau toxic/neon */
+  color: #000000; /* Teks hitam pekat */
+}
+
+::-moz-selection {
+  background-color: #ccff00;
+  color: #000000;
 }
 
 /* Setup Animasi Marquee */
