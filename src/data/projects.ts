@@ -20,6 +20,7 @@ export const PROJECTS: Project[] = [
     link: 'https://github.com/dooms667/doompet',
     preview: '/assets/videos/doompet.mp4'
   },
+
   {
     id: 'pos-system',
     title: 'POS & INVENTORY SYSTEM',
@@ -30,6 +31,17 @@ export const PROJECTS: Project[] = [
     link: 'https://github.com/dooms667/POS-SMK',
     preview: '/assets/videos/posphi.mp4',
   },
+
+  {
+    id: 'dovault-manager',
+    title: 'DOVAULT - PASSWORD MANAGER',
+    category: 'logic',
+    tags: ['FLUTTER', 'SQLITE', 'LOCAL-FIRST'],
+    description: 'A local-first, offline password manager for Android. Built with Flutter.',
+    featured: false,
+    link: 'https://github.com/dooms667/dovault',
+  },
+
   {
     id: 'zine-kehancuran',
     title: 'KEHANCURAN NGASAL',
@@ -40,6 +52,7 @@ export const PROJECTS: Project[] = [
     link: 'https://www.instagram.com/p/DfSsPfkkx9P/?img_index=1',
     preview: '/assets/videos/zine-kehancuran.mp4'
   },
+
   {
     id: 'napak-tanah',
     title: 'NAPAK TANAH WOK!',
