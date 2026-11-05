@@ -82,7 +82,7 @@ export const PROJECTS: Project[] = [
     tags: ['BRANDING', 'EMROIDERY', 'VISUAL IDENTITY'],
     description: 'Visual identity and embroidered emblem design for the Akarkarsa organization. Featuring a sapling illustration embraced by two hands in a deep blue and forest green palette, symbolizing sustainable growth, environmental care, and grassroots collaboration.',
     featured: false,
-    link: 'http://localhost:3000/gakada',
+    link: 'https://667-portfolio.vercel.app/error',
     preview: '/assets/images/akarkarsa.png',
   },
 
