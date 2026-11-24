@@ -7,6 +7,11 @@ export interface Project {
   featured: boolean;
   link?: string;
   preview?: string;
+  year?: string;
+  role?: string;
+  problem?: string;
+  architecture?: string;
+  deliverables?: string[];
 }
 
 export const PROJECTS: Project[] = [
@@ -18,7 +23,16 @@ export const PROJECTS: Project[] = [
     description: 'An offline-first financial tracking application featuring daily limits and a local storage architecture.',
     featured: true,
     link: 'https://github.com/dooms667/doompet',
-    preview: '/assets/videos/doompet.mp4'
+    preview: '/assets/videos/doompet.mp4',
+    year: '2026',
+    role: 'MOBILE ARCHITECT & UI/UX DESIGNER',
+    problem: 'Most personal finance apps stall on weak connections or lock basic expense logging behind cloud sign-ups. Daily spending caps require instant, zero-latency entry anywhere.',
+    architecture: 'Built around a local SQLite database as the primary source of truth so transactions, savings milestones, and daily budget calculations run completely offline with optional Supabase sync.',
+    deliverables: [
+      'Offline-First Flutter Android Application',
+      'Local SQLite Schema & Daily Limit Engine',
+      'High-Contrast Dark Mode Interface',
+    ],
   },
 
   {
@@ -30,6 +44,15 @@ export const PROJECTS: Project[] = [
     featured: true,
     link: 'https://github.com/dooms667/POS-SMK',
     preview: '/assets/videos/posphi.mp4',
+    year: '2026',
+    role: 'SYSTEM ANALYST & DESKTOP DEVELOPER',
+    problem: 'The Business Center at SMKS Persada Husada Indonesia relied on manual bookkeeping across multiple vocational units, causing stock discrepancies and slow break-time order queues.',
+    architecture: 'Engineered a relational MySQL backend connected via JDBC to a modular Java Swing desktop client in NetBeans, separating master inventory, cashier transactions, and pre-order workflows.',
+    deliverables: [
+      'Java Desktop POS & Inventory Client',
+      'Multi-Unit Relational MySQL Database',
+      'Food Pre-Order Queue & Reporting Module',
+    ],
   },
 
   {
@@ -40,6 +63,15 @@ export const PROJECTS: Project[] = [
     description: 'A local-first, offline password manager for Android. Built with Flutter.',
     featured: false,
     link: 'https://github.com/dooms667/dovault',
+    year: '2026',
+    role: 'SOLO DEVELOPER & PRODUCT DESIGNER',
+    problem: 'Cloud password managers introduce third-party server exposure and subscription bloat for users who want direct physical control over their credentials.',
+    architecture: 'Zero-cloud local vault stored strictly on-device via encrypted SQLite storage, eliminating external network calls and keeping credential retrieval instantaneous.',
+    deliverables: [
+      'Offline Android Credential Vault',
+      'Encrypted Local SQLite Storage Layer',
+      'Minimalist High-Contrast Vault UI',
+    ],
   },
 
   {
@@ -50,7 +82,16 @@ export const PROJECTS: Project[] = [
     description: 'A black-and-white zine about grief, anxiety and the stresses of everyday life printed in monochrome.',
     featured: true,
     link: 'https://www.instagram.com/p/DfSsPfkkx9P/?img_index=1',
-    preview: '/assets/videos/zine-kehancuran.mp4'
+    preview: '/assets/videos/zine-kehancuran.mp4',
+    year: '2025',
+    role: 'AUTHOR, ILLUSTRATOR & PRINT LAYOUT',
+    problem: 'Translating raw personal grief, burnout, and everyday anxiety into a physical print artifact without polishing away the discomfort.',
+    architecture: 'Photocopy-inspired monochrome halftone textures, aggressive grid breaks, and raw hand-rendered ink compositions formatted for independent zine printing.',
+    deliverables: [
+      'Self-Published Monochrome Print Zine',
+      'Editorial Sequence & Spread Typography',
+      'Custom Halftone & Ink Illustrations',
+    ],
   },
 
   {
@@ -62,6 +103,15 @@ export const PROJECTS: Project[] = [
     featured: true,
     link: 'https://www.instagram.com/p/DekmvToEzYP/?img_index=1',
     preview: '/assets/images/napak-tanah.png',
+    year: '2025',
+    role: 'ILLUSTRATOR & TYPOGRAPHER',
+    problem: 'Visualizing the tension between grounded everyday survival and local cultural heat without falling into nostalgic clichés.',
+    architecture: 'High-saturation crimson ground paired with stark focal framing, custom display lettering, and graphic flame motifs.',
+    deliverables: [
+      'Key Visual Poster Artwork',
+      'Custom Display Title Typography',
+      'Social Editorial Series',
+    ],
   },
 
   {
@@ -73,17 +123,35 @@ export const PROJECTS: Project[] = [
     featured: false,
     link: 'https://www.instagram.com/p/Ddn8zkcGHz7/?img_index=1',
     preview: '/assets/images/soriye.png',
+    year: '2025',
+    role: 'GRAPHIC DESIGNER & ILLUSTRATOR',
+    problem: 'Delivering sharp political satire in a visual language that cuts through passive social feeds immediately.',
+    architecture: 'Vintage comic-book halftone dots, heavy vector ink contours, and bold speech-bubble framing built for instant visual punch.',
+    deliverables: [
+      'Satirical Vector Poster',
+      'Print-Ready High-Contrast Master',
+      'Digital Release Assets',
+    ],
   },
 
   {
     id: 'akarkarsa',
     title: 'Akarkarsa Visual Identity',
     category: 'pixels',
-    tags: ['BRANDING', 'EMROIDERY', 'VISUAL IDENTITY'],
+    tags: ['BRANDING', 'EMBROIDERY', 'VISUAL IDENTITY'],
     description: 'Visual identity and embroidered emblem design for the Akarkarsa organization. Featuring a sapling illustration embraced by two hands in a deep blue and forest green palette, symbolizing sustainable growth, environmental care, and grassroots collaboration.',
     featured: false,
     link: 'https://667-portfolio.vercel.app/error',
     preview: '/assets/images/akarkarsa.png',
+    year: '2025',
+    role: 'BRAND & EMBLEM DESIGNER',
+    problem: 'Creating an organizational emblem readable both on digital screens and when translated into physical thread embroidery on apparel.',
+    architecture: 'Controlled line weights, simplified negative space, and a two-tone deep blue and forest green palette engineered specifically for stitch density.',
+    deliverables: [
+      'Primary Organizational Emblem',
+      'Embroidery-Ready Vector Specification',
+      'Color & Brand Usage Guidelines',
+    ],
   },
 
   {
@@ -95,6 +163,14 @@ export const PROJECTS: Project[] = [
     featured: false,
     link: 'https://www.instagram.com/p/C_ueAefy53y/',
     preview: '/assets/images/makantai.webp',
+    year: '2024',
+    role: 'ILLUSTRATOR & LETTERING ARTIST',
+    problem: 'Capturing unfiltered street-level frustration through blunt humor and confrontational graphic composition.',
+    architecture: 'Distorted character proportions locked against oversized red display lettering for immediate visual impact.',
+    deliverables: [
+      'Editorial Satire Illustration',
+      'Custom Poster Typography',
+    ],
   },
 
   {
@@ -106,6 +182,14 @@ export const PROJECTS: Project[] = [
     featured: false,
     link: 'https://www.instagram.com/p/C7wTvncSjdd/',
     preview: '/assets/images/mulaisekarang.jpg',
+    year: '2024',
+    role: 'TYPOGRAPHER & VISUAL ARTIST',
+    problem: 'Translating the quiet urgency of Hindia’s "Satu Hari Lagi" lyrics into a typographic piece that feels rhythmic rather than static.',
+    architecture: 'Fluid hand-lettered strokes interlocked across a monochromatic cobalt palette to guide eye movement line by line.',
+    deliverables: [
+      'Custom Hand-Lettered Poster',
+      'Monochromatic Color Study',
+    ],
   },
 
   {
@@ -117,6 +201,14 @@ export const PROJECTS: Project[] = [
     featured: false,
     link: 'https://www.instagram.com/p/C6JBTPZLS22/?img_index=1',
     preview: '/assets/images/siksakubur.webp',
+    year: '2024',
+    role: 'KEY ART & POSTER DESIGNER',
+    problem: 'Reimagining the theatrical key art for Siksa Kubur with a focus on claustrophobic psychological dread over standard horror tropes.',
+    architecture: 'Fragmented character silhouettes submerged in a dark-crimson monotone grade with distressed billing typography—acknowledged directly by director Joko Anwar.',
+    deliverables: [
+      'Alternative Theatrical Poster Key Art',
+      'Custom Title Treatment & Billing Block',
+    ],
   },
 
   {
@@ -128,6 +220,14 @@ export const PROJECTS: Project[] = [
     featured: false,
     link: 'https://www.instagram.com/p/DbOB1vkGPGi/?img_index=1',
     preview: '/assets/images/theworlds.jpg',
+    year: '2024',
+    role: 'ILLUSTRATOR & GRAPHIC DESIGNER',
+    problem: 'Depicting hyper-connectivity and screen dependency without resorting to sterile blue-circuit sci-fi clichés.',
+    architecture: 'Retro-pop streetwear archive palette combined with dense foreground-background framing of hardware artifacts.',
+    deliverables: [
+      'Editorial Concept Illustration',
+      'Apparel & Print-Ready Artwork',
+    ],
   },
 
   {
@@ -139,6 +239,15 @@ export const PROJECTS: Project[] = [
     featured: false,
     link: 'https://www.instagram.com/p/DZejGQPO0JN/',
     preview: '/assets/videos/amoliva.mp4',
+    year: '2026',
+    role: 'ART DIRECTOR & PACKAGING DESIGNER',
+    problem: 'Positioning a botanical pumpkin-seed and 8-spice hair oil away from generic herbal packaging toward an apothecary-grade visual identity.',
+    architecture: 'Low-key chiaroscuro lighting, tactile bottle label typography, and moody botanical staging across product renders and campaign motion.',
+    deliverables: [
+      'Brand Art Direction & Visual Identity',
+      'Bottle Label & Packaging Mockups',
+      'Commercial Campaign Motion & Storyboards',
+    ],
   },
   
   {
@@ -150,5 +259,13 @@ export const PROJECTS: Project[] = [
     featured: false,
     link: 'https://www.instagram.com/p/C3xXUhdrC1s/?img_index=1',
     preview: '/assets/videos/whiplash.mp4',
+    year: '2024',
+    role: 'EDITORIAL & MOTION DESIGNER',
+    problem: 'Visualizing acoustic tempo, obsession, and psychological pressure through static grid tension and kinetic motion.',
+    architecture: 'Hard-edged monochrome contrast, Swiss-inspired typographic alignment, and percussive motion timing synced to jazz drum cadences.',
+    deliverables: [
+      'Editorial Poster Study',
+      'Kinetic Typography Motion Loop',
+    ],
   },
 ];

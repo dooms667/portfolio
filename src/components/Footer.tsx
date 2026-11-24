@@ -2,7 +2,6 @@
 
 import Link from 'next/link';
 import React, { useState } from 'react';
-import BrutalistHeading from './BrutalistHeading';
 
 export default function Footer() {
   const [copied, setCopied] = useState(false);
@@ -18,9 +17,9 @@ export default function Footer() {
     <footer className="mt-32 border-t-4 border-[var(--text-raw)] pt-12 pb-8">
       {/* Section Header Badge */}
       <div className="relative mb-8 flex flex-col md:flex-row md:items-end gap-3">
-        <BrutalistHeading className="border-4 border-[var(--text-raw)] bg-[var(--text-raw)] text-[var(--bg-raw)] px-6 py-2 inline-block font-black text-2xl md:text-3xl uppercase tracking-tighter transform -rotate-1 shadow-[4px_4px_0px_0px_var(--text-raw)]">
+        <div className="border-4 border-[var(--text-raw)] bg-[var(--text-raw)] text-[var(--bg-raw)] px-6 py-2 inline-block font-black text-2xl md:text-3xl uppercase tracking-tighter transform -rotate-1 shadow-[4px_4px_0px_0px_var(--text-raw)]">
           /// [SECTION: SEND SIGNAL]
-        </BrutalistHeading>
+        </div>
         <div className="border-2 border-[var(--text-raw)] px-3 py-1 text-[10px] font-bold uppercase tracking-widest inline-block self-start">
           [COMMUNICATION_LINK]
         </div>
@@ -46,7 +45,7 @@ export default function Footer() {
             </span>
             <button
               onClick={handleCopy}
-              className="brutalist-interactive border-4 border-[var(--text-raw)] px-4 py-2 font-black text-xs tracking-widest bg-[var(--text-raw)] text-[var(--bg-raw)] hover:bg-[var(--bg-raw)] hover:text-[var(--text-raw)] uppercase shrink-0 cursor-pointer shadow-[4px_4px_0px_0px_var(--text-raw)]"
+              className="border-4 border-[var(--text-raw)] px-4 py-2 font-black text-xs tracking-widest bg-[var(--text-raw)] text-[var(--bg-raw)] hover:bg-[var(--bg-raw)] hover:text-[var(--text-raw)] transition-none uppercase shrink-0"
             >
               {copied ? '[COPIED TO CLIPBOARD!]' : '[COPY EMAIL]'}
             </button>

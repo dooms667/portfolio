@@ -7,8 +7,7 @@ import BrutalistCard from '../components/BrutalistCard';
 import Marquee from '../components/Marquee';
 import Footer from '../components/Footer';
 import MouseTracker from '../components/MouseTracker';
-import { playInvertSFX, initGlobalSFX } from '../utils/sfx';
-import BrutalistHeading from '../components/BrutalistHeading';
+import DoomsAsciiSigil from '../components/DoomsAsciiSigil';
 
 export default function Home() {
   const [isInverted, setIsInverted] = useState(false);
@@ -23,7 +22,6 @@ export default function Home() {
 
   const handleToggleInvert = (e: React.MouseEvent) => {
     e.stopPropagation(); // Biar gak bunyi double dengan click global
-    playInvertSFX(); // Khusus toggle pakai suara Zap
     setIsInverted(!isInverted);
   };
 
@@ -40,7 +38,7 @@ export default function Home() {
         
         <button 
           onClick={handleToggleInvert}
-          className="brutalist-interactive border-4 border-[var(--text-raw)] px-4 py-1.5 font-black text-xs tracking-widest bg-[var(--bg-raw)] hover:bg-[var(--text-raw)] hover:text-[var(--bg-raw)] uppercase cursor-pointer shadow-[4px_4px_0px_0px_var(--text-raw)]"
+          className="border-4 border-[var(--text-raw)] px-4 py-1.5 font-black text-xs tracking-widest hover:bg-[var(--text-raw)] hover:text-[var(--bg-raw)] transition-none uppercase cursor-pointer"
         >
           {isInverted ? '[X] REVERT INK' : '[ ] INVERT INK'}
         </button>
@@ -61,12 +59,9 @@ export default function Home() {
           <div className="border-4 border-[var(--text-raw)] p-5 md:p-6 bg-[var(--bg-raw)] shadow-[8px_8px_0px_0px_var(--text-raw)] relative z-10 w-full lg:w-auto shrink-0">
             <div className="flex flex-row items-center gap-4 md:gap-6">
               <div>
-                <BrutalistHeading
-                  as="h1"
-                  className="text-4xl md:text-5xl font-black uppercase tracking-tighter leading-none mb-2 whitespace-nowrap"
-                >
+                <h1 className="text-4xl md:text-5xl font-black uppercase tracking-tighter leading-none mb-2 whitespace-nowrap">
                   FARREL HAIKAL
-                </BrutalistHeading>
+                </h1>
                 <p className="text-xs md:text-sm font-black tracking-widest uppercase border-t-4 border-[var(--text-raw)] pt-2 inline-block">
                   /// AKA DOOMS667
                 </p>
@@ -103,32 +98,38 @@ export default function Home() {
       </header>
 
       {/* Floating Scattered Navigation Buttons */}
-      <nav className="relative my-16 space-y-12 md:space-y-0">
-        <div className="flex justify-end md:pr-75 md:mb-16">
-          <Link 
-            href="/logic" 
-            className="brutalist-interactive inline-block border-4 border-[var(--text-raw)] px-6 py-3 text-2xl md:text-3xl font-black tracking-wider uppercase bg-[var(--bg-raw)] hover:bg-[var(--text-raw)] hover:text-[var(--bg-raw)] shadow-[6px_6px_0px_0px_var(--text-raw)]"
-          >
-            [01] /// LOGIC
-          </Link>
+      <nav className="relative my-12 md:my-16">
+        <div className="absolute inset-0 flex items-center justify-center z-0">
+          <DoomsAsciiSigil className="text-[var(--text-raw)] opacity-75 md:opacity-95" />
         </div>
 
-        <div className="flex justify-start md:pl-70">
-          <Link 
-            href="/pixels" 
-            className="brutalist-interactive inline-block border-4 border-[var(--text-raw)] px-6 py-3 text-2xl md:text-3xl font-black tracking-wider uppercase bg-[var(--bg-raw)] hover:bg-[var(--text-raw)] hover:text-[var(--bg-raw)] shadow-[6px_6px_0px_0px_var(--text-raw)]"
-          >
-            [02] /// PIXELS
-          </Link>
+        <div className="relative z-10 py-12 md:py-20 space-y-14 md:space-y-20 pointer-events-none">
+          <div className="flex justify-end md:pr-44 lg:pr-72">
+            <Link 
+              href="/logic"
+              className="pointer-events-auto brutalist-interactive inline-block border-4 border-[var(--text-raw)] px-6 py-3 text-2xl md:text-3xl font-black tracking-wider uppercase bg-[var(--bg-raw)] hover:bg-[var(--text-raw)] hover:text-[var(--bg-raw)] shadow-[6px_6px_0px_0px_var(--text-raw)]"
+            >
+              [01] /// LOGIC
+            </Link>
+          </div>
+
+          <div className="flex justify-start md:pl-44 lg:pl-72">
+            <Link 
+              href="/pixels"
+              className="pointer-events-auto brutalist-interactive inline-block border-4 border-[var(--text-raw)] px-6 py-3 text-2xl md:text-3xl font-black tracking-wider uppercase bg-[var(--bg-raw)] hover:bg-[var(--text-raw)] hover:text-[var(--bg-raw)] shadow-[6px_6px_0px_0px_var(--text-raw)]"
+            >
+              [02] /// PIXELS
+            </Link>
+          </div>
         </div>
       </nav>
 
       {/* Curated Highlights Section */}
       <section className="mt-24">
         <div className="relative mb-8 flex flex-col md:flex-row md:items-end gap-3">
-          <BrutalistHeading className="border-4 border-[var(--text-raw)] bg-[var(--text-raw)] text-[var(--bg-raw)] px-6 py-2 inline-block font-black text-2xl md:text-3xl uppercase tracking-tighter transform -rotate-1 shadow-[4px_4px_0px_0px_var(--text-raw)]">
+          <div className="border-4 border-[var(--text-raw)] bg-[var(--text-raw)] text-[var(--bg-raw)] px-6 py-2 inline-block font-black text-2xl md:text-3xl uppercase tracking-tighter transform -rotate-1 shadow-[4px_4px_0px_0px_var(--text-raw)]">
             /// CURATED HIGHLIGHTS
-          </BrutalistHeading>
+          </div>
           <div className="border-2 border-[var(--text-raw)] px-3 py-1 text-[10px] font-bold uppercase tracking-widest inline-block self-start">
             [SELECTED WORKS]
           </div>

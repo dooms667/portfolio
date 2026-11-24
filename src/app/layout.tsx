@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import './globals.css';
 import SFXProvider from '../components/SFXProvider';
 import CustomCursor from '../components/CustomCursor';
-import AudioPlayer from '../components/AudioPlayer';
 import SmoothScroll from '../components/SmoothScroll';
 
 export const metadata: Metadata = {
@@ -19,11 +18,11 @@ export default function RootLayout({
     <html lang="en">
       <body className="bg-[var(--bg-raw)] text-[var(--text-raw)] cursor-none selection:bg-[#ccff00] selection:text-black flex flex-col min-h-screen">
         <SmoothScroll>
-          <AudioPlayer />
           <SFXProvider />
           <CustomCursor />
           {children}
         </SmoothScroll>
+        <div className="zine-noise" />
       </body>
     </html>
   );
