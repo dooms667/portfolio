@@ -364,7 +364,8 @@ export default function DoomsAsciiSigil({ className = '' }: DoomsAsciiSigilProps
     const hoverRadius = 68;
     const hoverSq = hoverRadius * hoverRadius;
     const fov = 2.45;
-    const springK = 165;
+    const springK = 195;
+    const bandOn = true; // set true jika tetap mau scanner line
 
     const render = (now: number) => {
       rafId = 0;
@@ -657,13 +658,10 @@ export default function DoomsAsciiSigil({ className = '' }: DoomsAsciiSigilProps
         ref={canvasRef}
         className="relative block h-full w-full cursor-crosshair touch-pan-y"
         style={{
-          WebkitMaskImage: 'radial-gradient(ellipse 72% 78% at 50% 50%, #000 55%, transparent 100%)',
-          maskImage: 'radial-gradient(ellipse 72% 78% at 50% 50%, #000 55%, transparent 100%)',
+          WebkitMaskImage: 'radial-gradient(ellipse 84% 88% at 50% 50%, #000 72%, transparent 100%)',
+          maskImage: 'radial-gradient(ellipse 84% 88% at 50% 50%, #000 72%, transparent 100%)',
         }}
       />
-
-      <div className="pointer-events-none absolute bottom-3 right-5 font-mono text-[9px] font-black uppercase tracking-[0.22em] opacity-55">
-      </div>
     </div>
   );
 }

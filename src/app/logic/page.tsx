@@ -1,9 +1,11 @@
+'use client';
+
+import React, { useState } from 'react';
 import Link from 'next/link';
 import { PROJECTS } from '../../data/projects';
 import BrutalistCard from '../../components/BrutalistCard';
 
 export default function LogicPage() {
-  // Ditambah toLowerCase() biar gak zonk kalau kategorinya nulis LOGIC / Logic
   const logicProjects = PROJECTS.filter(
     (p) => p.category?.toLowerCase() === 'logic'
   );
@@ -14,8 +16,8 @@ export default function LogicPage() {
         <h1 className="text-3xl md:text-5xl font-black uppercase tracking-tighter">
           /// LOGIC ARCHIVE
         </h1>
-        <Link 
-          href="/" 
+        <Link
+          href="/"
           className="brutalist-interactive border-4 border-[var(--text-raw)] px-4 py-1.5 font-black text-xs tracking-widest bg-[var(--bg-raw)] hover:bg-[var(--text-raw)] hover:text-[var(--bg-raw)] uppercase cursor-pointer shadow-[4px_4px_0px_0px_var(--text-raw)]"
         >
           [X] BACK

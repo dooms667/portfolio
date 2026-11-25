@@ -21,8 +21,8 @@ export default function Home() {
   }, [isInverted]);
 
   const handleToggleInvert = (e: React.MouseEvent) => {
-    e.stopPropagation(); // Biar gak bunyi double dengan click global
-    setIsInverted(!isInverted);
+    e.stopPropagation();
+    setIsInverted((prev) => !prev);
   };
 
   const featuredProjects = PROJECTS.filter((p) => p.featured);
@@ -32,11 +32,12 @@ export default function Home() {
       {/* Top Status Bar */}
       <div className="flex justify-between items-center border-b-4 border-[var(--text-raw)] pb-3">
         <div className="text-xs font-black tracking-widest uppercase flex items-center gap-2">
-          <span className="w-2.5 h-2.5 bg-[var(--text-raw)] animate-pulse inline-block"></span>
+          <span className="w-2.5 h-2.5 bg-[var(--text-raw)] animate-pulse inline-block" />
           <span>[SYS_STATUS: ONLINE /// JAKARTA UTC+7]</span>
         </div>
-        
-        <button 
+
+        <button
+          type="button"
           onClick={handleToggleInvert}
           className="border-4 border-[var(--text-raw)] px-4 py-1.5 font-black text-xs tracking-widest hover:bg-[var(--text-raw)] hover:text-[var(--bg-raw)] transition-none uppercase cursor-pointer"
         >
@@ -50,7 +51,7 @@ export default function Home() {
       </div>
 
       {/* Asymmetric Header Section */}
-      <header className="relative my-8 mb-16">
+      <header className="relative mt-8 mb-14">
         <div className="inline-block bg-[var(--text-raw)] text-[var(--bg-raw)] font-black text-xs px-3 py-1 tracking-widest uppercase transform -rotate-1 mb-4 relative z-20 shadow-[4px_4px_0px_0px_var(--bg-raw)]">
           /// LEGAL: FARREL HAIKAL // ALIAS: DOOMS667
         </div>
@@ -67,15 +68,15 @@ export default function Home() {
                 </p>
               </div>
 
-              <div className="relative z-20 transform rotate-3 hover:rotate-0 transition-transform duration-200 shrink-0">
-                <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-10 h-3.5 bg-[var(--text-raw)] opacity-40 border border-[var(--bg-raw)] z-30 transform -rotate-2 pointer-events-none"></div>
+              <div className="relative z-20 transform rotate-3 hover:rotate-0 transition-transform duration-150 shrink-0">
+                <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-10 h-3.5 bg-[var(--text-raw)] opacity-40 border border-[var(--bg-raw)] z-30 transform -rotate-2 pointer-events-none" />
 
                 <div className="border-2 border-[var(--text-raw)] bg-[var(--bg-raw)] p-1 shadow-[3px_3px_0px_0px_var(--text-raw)] w-24 md:w-28">
                   <div className="aspect-[3/4] border border-[var(--text-raw)] overflow-hidden bg-[var(--text-raw)] relative">
-                    <img 
-                      src="/assets/images/profile.jpeg" 
-                      alt="Farrel Haikal" 
-                      className="w-full h-full object-cover grayscale contrast-250 brightness-90 hover:scale-105 transition-transform duration-300 [image-rendering:pixelated]" 
+                    <img
+                      src="/assets/images/profile.jpeg"
+                      alt="Farrel Haikal"
+                      className="w-full h-full object-cover grayscale contrast-250 brightness-90 hover:scale-105 transition-transform duration-150 [image-rendering:pixelated]"
                     />
                     <div className="absolute bottom-0 inset-x-0 bg-[var(--bg-raw)] text-[var(--text-raw)] text-[8px] font-black text-center py-0.5 tracking-widest uppercase border-t border-[var(--text-raw)]">
                       [FIG_01]
@@ -98,14 +99,14 @@ export default function Home() {
       </header>
 
       {/* Floating Scattered Navigation Buttons */}
-      <nav className="relative my-12 md:my-16">
+      <nav className="relative my-16 md:my-24">
         <div className="absolute inset-0 flex items-center justify-center z-0">
           <DoomsAsciiSigil className="text-[var(--text-raw)] opacity-75 md:opacity-95" />
         </div>
 
-        <div className="relative z-10 py-12 md:py-20 space-y-14 md:space-y-20 pointer-events-none">
-          <div className="flex justify-end md:pr-44 lg:pr-72">
-            <Link 
+        <div className="relative z-10 py-12 md:py-20 flex flex-col gap-24 md:gap-36 pointer-events-none">
+          <div className="flex justify-end pr-2 md:pr-24 lg:pr-44">
+            <Link
               href="/logic"
               className="pointer-events-auto brutalist-interactive inline-block border-4 border-[var(--text-raw)] px-6 py-3 text-2xl md:text-3xl font-black tracking-wider uppercase bg-[var(--bg-raw)] hover:bg-[var(--text-raw)] hover:text-[var(--bg-raw)] shadow-[6px_6px_0px_0px_var(--text-raw)]"
             >
@@ -113,8 +114,8 @@ export default function Home() {
             </Link>
           </div>
 
-          <div className="flex justify-start md:pl-44 lg:pl-72">
-            <Link 
+          <div className="flex justify-start pl-2 md:pl-24 lg:pl-44">
+            <Link
               href="/pixels"
               className="pointer-events-auto brutalist-interactive inline-block border-4 border-[var(--text-raw)] px-6 py-3 text-2xl md:text-3xl font-black tracking-wider uppercase bg-[var(--bg-raw)] hover:bg-[var(--text-raw)] hover:text-[var(--bg-raw)] shadow-[6px_6px_0px_0px_var(--text-raw)]"
             >
@@ -125,7 +126,7 @@ export default function Home() {
       </nav>
 
       {/* Curated Highlights Section */}
-      <section className="mt-24">
+      <section className="mt-16 md:mt-20 border-t-4 border-[var(--text-raw)] pt-10">
         <div className="relative mb-8 flex flex-col md:flex-row md:items-end gap-3">
           <div className="border-4 border-[var(--text-raw)] bg-[var(--text-raw)] text-[var(--bg-raw)] px-6 py-2 inline-block font-black text-2xl md:text-3xl uppercase tracking-tighter transform -rotate-1 shadow-[4px_4px_0px_0px_var(--text-raw)]">
             /// CURATED HIGHLIGHTS
